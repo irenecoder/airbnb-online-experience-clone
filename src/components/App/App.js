@@ -4,6 +4,9 @@ import Navbar from "../Navgrid/Navbar"
 import Grid from "../Navgrid/Grid"
 import Card from "../Card/Card"
 import data from "./data.js"
+import Nav from "../Travel/Nav"
+import tradata from "./tradata.js"
+import Main from "../Travel/Main.js"
 
 
 function App() {
@@ -36,6 +39,22 @@ function App() {
             
             
 
+        </div>
+    )
+    const places = tradata.map(item=>{
+        return(
+            <Main
+            key={item.id}
+            {...item} />
+        )
+
+    })
+    return(
+        <div>
+            <Nav />
+            <section className="places-list">
+             {places}
+            </section>
         </div>
     )
 
